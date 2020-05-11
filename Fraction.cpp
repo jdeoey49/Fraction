@@ -28,3 +28,36 @@ void Fraction::normalize()
 		}
 	}
 }
+Fraction Fraction::operator++(int)
+{
+	Fraction ans= *this;
+	(this->num_) = (this->num_) + (this->den_);
+	return ans;
+}
+Fraction Fraction::operator--(int)
+{
+	Fraction ans = *this;
+	(this->num_) = (this->num_) - (this->den_);
+	return ans;
+}
+Fraction Fraction::operator++()
+{
+	(this->num_) += (this->den_);
+	return *this;
+}
+Fraction Fraction::operator--()
+{
+	(this->num_) -= (this->den_);
+	return *this;
+}
+Fraction Fraction::operator-()
+{
+	int sign = 1;
+	int num(this->num_); int den(this->den_);
+	if (num < 0) { sign = -1; num = -num;}
+	if (den < 0) { sign = -1; den = -den;}
+	sign = -sign;
+	this->num_ = num * sign;
+	this->den_ = den;
+	return *this;
+}
