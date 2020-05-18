@@ -1,1 +1,8 @@
+Using Unary Operator
+increment(++) decrement(--)
+unary minus(-) 相反數
+logical not(!)
 
+
+Fraction oprator++(int)//i++ postfix increment
+Fraction operator++()//++i prefix increment
